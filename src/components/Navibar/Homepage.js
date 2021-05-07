@@ -2,8 +2,8 @@ import './Homepage.css'
 
 const Homepage = () => {
   return (
-  <div className="movies">
-    Home
+  <div className="homepage">
+    <h2 className="h2">De beste films en series, direct op je scherm</h2>
   </div>
   );
 }
