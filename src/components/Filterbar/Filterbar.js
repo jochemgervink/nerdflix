@@ -1,55 +1,59 @@
 import './Filterbar.css'
-import { useEffect, useState } from 'react'
-const Filterbar = ({ data, setData }) => {
+import { useState } from 'react'
+const Filterbar = ( getData, setData ) => {
 
 
   const [alphabeticSort, setAlphabeticSort] = useState(true);
 
-  function toggleSort() {
-    console.log("data()")
 
-    console.log(data())
+  // Sorteren geeft bugs icm data fetching, wegens tijdgebrek niet kunnen oplossen.
+  // async function toggleSort() {
+  //   if (typeof data == 'undefined') {
+  //     console.log("loading")
+  //     return <p>Data is loading...</p>;
+  //   }
+  //   var movies = data.data;
+  //   console.log(movies)
 
-    if (typeof data == 'undefined') {
-      console.log("loading")
-      return <p>Data is loading...</p>;
-    }
-    var movies = data.data;
-    console.log(movies)
-
-    if (typeof movies != 'undefined') {
-      if (alphabeticSort) {
-        movies.sort(function (a, b) {
-          console.log("sorting A-Z")
-          var textA = a.title.toUpperCase();
-          var textB = b.title.toUpperCase();
-          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-        });
-      }
-      else {
-        movies.sort(function (a, b) {
-          console.log("sorting Z-A")
-          var textA = a.title.toUpperCase();
-          var textB = b.title.toUpperCase();
-          return (textB < textA) ? -1 : (textB > textA) ? 1 : 0;
-        });
-      }
-    }
-    
-
-    console.log(movies)
-  }
+  //   if (typeof movies != 'undefined') {
+  //     if (alphabeticSort) {
+  //       movies.sort(function (a, b) {
+  //         console.log("sorting A-Z")
+  //         var textA = a.title.toUpperCase();
+  //         var textB = b.title.toUpperCase();
+  //         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  //       });
+  //     }
+  //     else {
+  //       movies.sort(function (a, b) {
+  //         console.log("sorting Z-A")
+  //         var textA = a.title.toUpperCase();
+  //         var textB = b.title.toUpperCase();
+  //         return (textB < textA) ? -1 : (textB > textA) ? 1 : 0;
+  //       });
+  //     }
+  //   }
+  //   console.log(movies)
+  // }
 
 
+
+  //Deze functie triggert niet bij een druk op de button. Ik weet niet waarom, wegens tijdgebrek niet kunnen oplossen. 
   async function onSort() {
-    await toggleSort()
+    console.log(alphabeticSort)
+
+    if (alphabeticSort){
+      console.log("sort alphabetically")
+    }else
+    {
+      console.log("sort reverse alphabetically")
+    }
+    console.log(alphabeticSort)
   }
 
   async function filterMovies(){
     var input = document.getElementById('filter_movies').value.toLowerCase();
     console.log(input)
-    
-
   }
 
   return (
@@ -66,6 +70,7 @@ const Filterbar = ({ data, setData }) => {
             <p>(Z-A)</p>
           </div>
         </div>
+        <btn onClick={onSort()}> Sort</btn>
         <button onClick={onSort()}>Sort</button>
 
       </div>
