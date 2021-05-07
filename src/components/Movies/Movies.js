@@ -8,6 +8,7 @@ const Movies = () => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState([]);
 
   async function fetchData() {
     await fetch('imdb-top-50.json'
@@ -19,11 +20,9 @@ const Movies = () => {
       }
     )
       .then(function (response) {
-        console.log(response)
         return response.json();
       })
       .then(function (myJson) {
-        console.log(myJson.data.movies[0].urlPoster)
 
         console.log(myJson.data.movies);
         setData(myJson.data.movies)
@@ -37,21 +36,21 @@ const Movies = () => {
   }, [])
 
   if (loading) {
-    console.log(loading)
     return <p>Data is loading...</p>;
   }
 
+  function getData(){
+    return data;
+  }
   return (
     <>
-      <Filterbar />
+      <Filterbar data={getData} setData={setData} loading={loading} setLoading={setLoading}/>
       <div className="movies">
         {!loading &&
            data && data.length > 0 && data.map((item) => (
-            <MovieCard movie={item} ></MovieCard>
+            <MovieCard movie={item} favorites={favorites} setFavorites={setFavorites}  ></MovieCard>
           ))
         }
-
-
       </div>
     </>
   );
