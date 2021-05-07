@@ -6,7 +6,9 @@ const Filterbar = () => {
   return (
     <>
       <div className="bar">
-        <Searchbox></Searchbox>
+        <Searchbox>
+          
+        </Searchbox>
 
         <Sortbox />
 

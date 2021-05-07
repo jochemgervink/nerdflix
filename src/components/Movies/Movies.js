@@ -1,6 +1,7 @@
+import './Movies.css'
 const Movies = () => {
   return (
-    <div style={{ color: 'green' }}>
+    <div className="movies">
       Movies
     </div>
 

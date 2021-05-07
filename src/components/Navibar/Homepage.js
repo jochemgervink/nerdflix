@@ -1,6 +1,8 @@
+import './Homepage.css'
+
 const Homepage = () => {
   return (
-  <div style={{color:'green'}}>
+  <div className="movies">
     Home
   </div>
   );

@@ -1,6 +1,7 @@
+import './Series.css'
 const Series = () => {
   return (
-    <div style={{ color: 'green' }}>
+    <div className="series">
       Series
     </div>
   );
