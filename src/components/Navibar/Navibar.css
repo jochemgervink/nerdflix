@@ -1,0 +1,26 @@
+.nav {
+  background: #131313;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav_btns{
+  display: flex;
+  padding: 0px 6.88%;
+}
+
+.nav_btn{
+  display: inline-block;
+  padding: 0px 6.88%;
+}
+
+.nav_logo{
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  margin-right: 50%;
+  color:#E50914;
+}
