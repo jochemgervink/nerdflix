@@ -18,7 +18,13 @@ function App() {
 
         <Filterbar />
 
+        <Switch>
 
+          <Route exact path="/home" component={Homepage}></Route>
+          <Route path="/series" component={Series}></Route>
+          <Route path="/movies" component={Movies}></Route>
+
+        </Switch>
 
     </div>
   );

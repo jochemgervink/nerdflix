@@ -7,16 +7,22 @@
 }
 
 .nav_btns{
+  background: #131313;
+
   display: flex;
   padding: 0px 6.88%;
 }
 
 .nav_btn{
+  background: #131313;
+
   display: inline-block;
   padding: 0px 6.88%;
 }
 
 .nav_logo{
+  background: #131313;
+
   display: flex; 
   align-items: center; 
   justify-content: center; 

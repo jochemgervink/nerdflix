@@ -1,5 +1,10 @@
 const Movies = () => {
-  return (<>Movies</>);
+  return (
+    <div style={{ color: 'green' }}>
+      Movies
+    </div>
+
+  );
 
 }
 export default Movies;

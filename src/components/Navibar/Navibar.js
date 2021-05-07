@@ -9,7 +9,6 @@ const Navibar = () => {
 
   return (
     <>
-      <Router>
         <div className="nav">
           <div className="nav_btns">
             <Link className="nav_btn" to="/home">Homepage </Link>
@@ -18,10 +17,6 @@ const Navibar = () => {
           </div>
           <h1 className="nav_logo">NERDFLIX</h1>
         </div>
-      </Router>
-
-
-
     </>
   );
 }
