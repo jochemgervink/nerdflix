@@ -1,5 +1,6 @@
 .movies{
   background-color: #1D1D1D;
+  overflow:auto;
   position: absolute;
   top: 170px;
   right: 0;
